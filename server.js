@@ -6,6 +6,12 @@ const port = 3000;
 app.use(cors());
 app.use(express.json());
 
+// Route to check if the server is running
+app.get("/", (req, res) => {
+    res.send("Server is running!");
+});
+
+// Existing POST route
 app.post("/click", (req, res) => {
     console.log("Button clicked!");
     res.send("Button click received!");
